@@ -1,4 +1,4 @@
-
+import sqlite3
 def sports_list():
   sports = ["Soccer", "Basketball", "Running"]
   print(sports[0:3])
@@ -34,10 +34,18 @@ def choose_basketball_shoe(shoe_list):
   choose_basketball_shoe(shoe_list);
 
 
+
+
+def select_all():
+	with sqlite3.connect("SportShoe.db") as db:
+	  cursor = db.cursor()
+	  cursor.execute("SELECT * FROM Shoe")
+	  Shoes = cursor.fetchall()
+
+select_all()
+
+
 message = "What sport do you play?"
 print(message)
 sports_list();
 sports_type();
-
-import sqlite3
-
