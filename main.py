@@ -34,14 +34,11 @@ def choose_basketball_shoe(shoe_list):
   choose_basketball_shoe(shoe_list);
 
 
-
-
 def select_all():
-	with sqlite3.connect("SportShoe.db") as db:
+	with sqlite3.connect("sportshoedata.db") as db:
 	  cursor = db.cursor()
-	  cursor.execute("SELECT * FROM Shoe")
+	  cursor.execute("SELECT * FROM sports")
 	  Shoes = cursor.fetchall()
-
 select_all()
 
 
